@@ -32,3 +32,35 @@ Integración en AGENTS.md:
 Subir a la plataforma el documento con Portada, Desarrollo, Evidencias, Conclusiones y Fuentes.
 
 Seguir instrucciones acordadas en clase
+
+
+
+# 🤖 MIAGENTE-CLIMABOT
+
+[![Docker](https://img.shields.io/badge/Docker-Container-blue)](https://www.docker.com/)
+[![Nanobot](https://img.shields.io/badge/Nanobot-AI_Agent-green)](https://github.com/HKUDS/nanobot)
+[![Open-Meteo](https://img.shields.io/badge/API-OpenMeteo-orange)](https://open-meteo.com)
+
+## 📋 Descripción
+
+Agente autónomo basado en **Nanobot** que puede consultar el clima en tiempo real usando la API de **Open-Meteo** sin necesidad de código adicional, solo mediante archivos de contexto Markdown.
+
+## 🏗️ Arquitectura
+
+## 🚀 Cómo reproducir este proyecto
+
+### 1. Iniciar contenedor Docker
+```bash
+docker run -it -d --name nanomike -p 8000:1001 ubuntu
+docker exec -it nanomike bash
+
+apt update && apt install -y python3 pip git curl nano
+git clone https://github.com/HKUDS/nanobot.git
+cd nanobot
+pip install -e . --break-system-packages
+
+nanobot onboard --wizard
+# Seleccionar DeepSeek como provider
+# Ingresar API key
+
+nanobot gateway
